@@ -136,6 +136,11 @@ SET d.id_pais = pais.id_pais,
 select * from dataset;
 select id_regiao from dataset where id_regiao= 313;
 
+-- Tratando as data para foramto ano/mês/dia
+
+UPDATE dataset
+SET data_pedido = STR_TO_DATE(data_pedido, '%d-%m-%Y');
+
 
 
 
