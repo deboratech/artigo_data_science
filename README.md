@@ -1,4 +1,5 @@
 # Artigo Ciência de Dados
+Neste artigo, vamos abordar o CRISP-DM, que é um modelo amplamente utilizado para projetos de mineração de dados. Ele é dividido em seis fases: compreensão do negócio, entendimento dos dados, preparação dos dados, modelagem, avaliação e implantação.
 
 ## Sobre o Projeto
 
@@ -16,7 +17,6 @@ Durante o desenvolvimento deste projeto, serão realizadas as seguintes etapas c
 
 6. **Desenvolvimento dos Dashboards**: Serão desenvolvidos dashboards para visualização e análise dos dados, permitindo uma compreensão mais fácil e rápida das informações.
 
-7. **Validação e Ajustes**: As informações obtidas serão validadas e ajustadas em conjunto com a área demandante/cliente para garantir que atendam às necessidades e expectativas, contribuindo assim para a geração de insights relevantes.
 
-   [Acompanhe o passo a passo no meu Notion](https://deboratech.notion.site/Artigo-Ci-ncia-de-Dados-8e8570d943224f3a9023316b2c33ffe9?pvs=74)
+[Acompanhe o passo a passo no meu Notion](https://deboratech.notion.site/Artigo-Ci-ncia-de-Dados-8e8570d943224f3a9023316b2c33ffe9?pvs=74)
 
