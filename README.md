@@ -2,7 +2,7 @@
 
 ## Sobre o Projeto
 
-Durante o desenvolvimento deste projeto, serão realizadas as seguintes etapas com o objetivo de trazer insights valiosos:
+Durante o desenvolvimento deste projeto, serão realizadas as seguintes etapas com o objetivo de trazer insights:
 
 1. **Obtenção e Tratamento de Dados**: Será realizado o processo de obtenção e tratamento da massa de dados necessária para responder ao objetivo geral do projeto.
 
