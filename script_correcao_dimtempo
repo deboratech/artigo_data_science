@@ -94,6 +94,15 @@ SELECT * FROM DimTempo;
 alter table FatoVenda drop column lucro;
 alter table FatoVenda drop column desconto;
 
+alter table DimTempo drop column nome_dia;
+alter table DimTempo drop column nome_mes;
+
+alter table DimTempo drop column bimestre;
+alter table DimTempo drop column semestre;
+alter table DimTempo drop column final_de_semana;
+
 alter table DimTempo rename column NomeDia to nome_dia;
 alter table DimTempo rename column NomeMes to nome_mes;
+
+
 
