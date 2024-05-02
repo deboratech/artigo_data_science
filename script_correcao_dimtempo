@@ -1,0 +1,99 @@
+use mmd
+
+drop database mmd
+
+create database mmd
+
+use mmd
+
+CREATE TABLE DimSegmento (
+    id_segmento INT PRIMARY KEY,
+    descricao_segmento VARCHAR(50)
+);
+
+CREATE TABLE DimTempo (
+        id_tempo         INTEGER PRIMARY KEY,  -- year*10000+month*100+day
+        data                DATE NOT NULL,
+        ano                 INTEGER NOT NULL,
+        mes                 INTEGER NOT NULL, -- 1 to 12
+        dia                 INTEGER NOT NULL, -- 1 to 31
+        bimestre            INTEGER NOT NULL, -- 1 to 4
+        semestre            INTEGER NOT NULL, -- 1 to 4
+        NomeDia             VARCHAR(9) NOT NULL, -- 'Monday', 'Tuesday'...
+        NomeMes             VARCHAR(9) NOT NULL, -- 'January', 'February'...
+        final_de_semana       CHAR(1) DEFAULT 'F' CHECK (final_de_semana in ('T', 'F'))
+) Engine=InnoDB;
+
+
+
+CREATE TABLE DimCliente (
+    id_cliente INT PRIMARY KEY,
+    descricao_cliente VARCHAR(50)
+);
+
+CREATE TABLE DimProduto (
+    id_produto INT PRIMARY KEY,
+    descricao_produto VARCHAR(255)
+);
+
+CREATE TABLE DimCategoria (
+    id_categoria INT PRIMARY KEY,
+    descricao_categoria VARCHAR(50)
+);
+
+CREATE TABLE DimRegiao (
+    id_regiao INT PRIMARY KEY,
+    descricao_regiao VARCHAR(50)
+);
+
+CREATE TABLE DimPais (
+    id_pais INT PRIMARY KEY,
+    descricao_pais VARCHAR(50)
+);
+
+CREATE TABLE DimPrioridade (
+    id_prioridade INT PRIMARY KEY,
+    descricao_prioridade VARCHAR(50)
+);
+
+CREATE TABLE DimSubcategoria (
+    id_subcategoria INT PRIMARY KEY,
+    descricao_subcategoria VARCHAR(50)
+);
+
+CREATE TABLE FatoVenda (
+    id_venda INT PRIMARY KEY,
+    id_segmento INT,
+    id_tempo INT,
+    id_cliente INT,
+    id_produto INT,
+    id_categoria INT,
+    id_regiao INT,
+    id_pais INT,
+    id_prioridade INT,
+    id_subcategoria INT,
+    total_venda DECIMAL,
+    quantidade_vendida INT,
+    lucro DECIMAL,
+    desconto DECIMAL,
+    FOREIGN KEY (id_segmento) REFERENCES DimSegmento(id_segmento),
+    FOREIGN KEY (id_tempo) REFERENCES DimTempo(id_tempo),
+    FOREIGN KEY (id_cliente) REFERENCES DimCliente(id_cliente),
+    FOREIGN KEY (id_produto) REFERENCES DimProduto(id_produto),
+    FOREIGN KEY (id_categoria) REFERENCES DimCategoria(id_categoria),
+    FOREIGN KEY (id_regiao) REFERENCES DimRegiao(id_regiao),
+    FOREIGN KEY (id_pais) REFERENCES DimPais(id_pais),
+    FOREIGN KEY (id_prioridade) REFERENCES DimPrioridade(id_prioridade),
+    FOREIGN KEY (id_subcategoria) REFERENCES DimSubcategoria(id_subcategoria)
+);
+
+SELECT * FROM FatoVenda;
+
+SELECT * FROM DimTempo;
+
+alter table FatoVenda drop column lucro;
+alter table FatoVenda drop column desconto;
+
+alter table DimTempo rename column NomeDia to nome_dia;
+alter table DimTempo rename column NomeMes to nome_mes;
+
