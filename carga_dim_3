@@ -37,4 +37,6 @@ END$$
 
 DELIMITER ;
 
+CALL carga_dimensao_tempo('2024-01-01','2024-12-31');
+
 select*from DimTempo;
